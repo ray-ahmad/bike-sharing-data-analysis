@@ -1,3 +1,4 @@
+import os.path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,8 +7,12 @@ import streamlit as st
 
 st.set_page_config(page_title="Bike Sharing Data Analysis by Rayhan Ahmad")
 
-day_df = pd.read_csv("./data/day.csv")
-hour_df = pd.read_csv("./data/hour.csv")
+if os.path.exists("../data"):
+    day_df = pd.read_csv("../data/day.csv")
+    hour_df = pd.read_csv("../data/hour.csv")
+else:
+    day_df = pd.read_csv("./data/day.csv")
+    hour_df = pd.read_csv("./data/hour.csv")
 
 with st.sidebar:
     # Menambahkan logo perusahaan
@@ -49,8 +54,8 @@ with st.container():
 
     fig, ax = plt.subplots()
     # Membuat stacked bar chart
-    ax.bar([nama_hari[day] for day in days], casual_counts, label='Casual', color='r')
-    ax.bar([nama_hari[day] for day in days], registered_counts, bottom=casual_counts, label='Registered', color='b')
+    ax.bar([nama_hari[day] for day in days], casual_counts, label='Casual', color='lightcoral')
+    ax.bar([nama_hari[day] for day in days], registered_counts, bottom=casual_counts, label='Registered', color='lightblue')
 
     ax.set_xlabel('Hari')
     ax.set_ylabel('Jumlah')
