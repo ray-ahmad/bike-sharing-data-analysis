@@ -2,7 +2,7 @@
 
 ## Clone project
 ```
-git clone
+git clone https://github.com/ray-ahmad/bike-sharing-data-analysis.git
 ```
 
 ## Setup environment
