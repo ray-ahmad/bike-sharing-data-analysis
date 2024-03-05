@@ -6,8 +6,8 @@ import streamlit as st
 
 st.set_page_config(page_title="Bike Sharing Data Analysis by Rayhan Ahmad")
 
-day_df = pd.read_csv("../data/day.csv")
-hour_df = pd.read_csv("../data/hour.csv")
+day_df = pd.read_csv("./data/day.csv")
+hour_df = pd.read_csv("./data/hour.csv")
 
 with st.sidebar:
     # Menambahkan logo perusahaan
